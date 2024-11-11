@@ -37,6 +37,10 @@ solucionado fácilmente con el uso de unas pocas líneas de código y sentencias
 
    - Pon a correr al proyecto y prueba registrarte e iniciar sesión.
    - En Microsoft SQL Server Management Studio podrás encontrar el usuario administrador y desarrollador para que puedas verificar la limitación de ciertas funcionalidades.
+   **NOTA:** En caso de que quieras probar el proyecto desplegado, aquí te dejo todo lo necesario para que puedas acceder a él.
+     - __Enlace al sitio web:__ http://matex2395123-001-site1.ntempurl.com/Home/Index
+     - __Usuario:__ 11203405
+     - __Contraseña:__ 60-dayfreetrial
 
 ## Créditos
 
