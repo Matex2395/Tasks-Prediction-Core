@@ -15,7 +15,7 @@ public partial class User
 
     public string UserEmail { get; set; } = null!;
 
-    public DateOnly? CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
 
     public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
 }

@@ -56,20 +56,20 @@ namespace AdminMVC.Controllers
         // POST: Tasks/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TaskId,TaskName,EstimatedTime,ActualTime,TaskState,CreationDate,UserId,CategoryId")] Task task)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(task);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", task.CategoryId);
-            ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", task.UserId);
-            return View(task);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("TaskId,TaskName,EstimatedTime,ActualTime,TaskState,CreationDate,UserId,CategoryId")] System.Threading.Tasks.Task task)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(task);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", task.CategoryId);
+        //    ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", task.UserId);
+        //    return View(task);
+        //}
 
         // GET: Tasks/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -92,39 +92,39 @@ namespace AdminMVC.Controllers
         // POST: Tasks/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TaskId,TaskName,EstimatedTime,ActualTime,TaskState,CreationDate,UserId,CategoryId")] Task task)
-        {
-            if (id != task.TaskId)
-            {
-                return NotFound();
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("TaskId,TaskName,EstimatedTime,ActualTime,TaskState,CreationDate,UserId,CategoryId")] Task task)
+        //{
+        //    if (id != task.TaskId)
+        //    {
+        //        return NotFound();
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(task);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TaskExists(task.TaskId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", task.CategoryId);
-            ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", task.UserId);
-            return View(task);
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(task);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!TaskExists(task.TaskId))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", task.CategoryId);
+        //    ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", task.UserId);
+        //    return View(task);
+        //}
 
         // GET: Tasks/Delete/5
         public async Task<IActionResult> Delete(int? id)
