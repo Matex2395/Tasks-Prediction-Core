@@ -70,7 +70,8 @@ namespace AdminMVC.Controllers
 
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, found_user.UserName)
+                new Claim(ClaimTypes.Name, found_user.UserName),
+                new Claim(ClaimTypes.Role, found_user.UserRole)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

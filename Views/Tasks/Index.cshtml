@@ -1,39 +1,39 @@
 ﻿@model IEnumerable<AdminMVC.Models.Task>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Tareas";
 }
 
-<h1>Index</h1>
+<h1>Lista de Tareas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Crear Nueva Tarea</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TaskName)
+                Nombre Tarea
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EstimatedTime)
+                Tiempo Estimado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ActualTime)
+                Tiempo Actual
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TaskState)
+                Estado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreationDate)
+                Fecha Creación
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                Categoría
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User)
+                Usuario Asignado
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>

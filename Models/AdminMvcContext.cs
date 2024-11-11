@@ -92,6 +92,15 @@ public partial class AdminMvcContext : DbContext
                 .HasMaxLength(50)
                 .HasDefaultValue("Developer")
                 .HasColumnName("userRole");
+            entity.HasData(new User
+            {
+                UserId = 001,
+                UserName = "Administrador Base",
+                UserPassword = "admin123",
+                UserRole = "Administrator",
+                UserEmail = "admin@gmail.com",
+                CreatedAt = DateTime.Now
+            });
         });
 
         OnModelCreatingPartial(modelBuilder);

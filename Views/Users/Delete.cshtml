@@ -49,3 +49,11 @@
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        alert('@TempData["ErrorMessage"]');
+    </script>
+}
+

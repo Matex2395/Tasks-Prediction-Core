@@ -77,6 +77,14 @@ namespace AdminMVC.Controllers
             {
                 return NotFound();
             }
+
+            // Si el usuario es "Administrator", redirige a una página de acceso restringido
+            if (user.UserRole == "Administrator")
+            {
+                TempData["Message"] = "No puedes editar un usuario administrador.";
+                return RedirectToAction("Restricted", "Access");
+            }
+
             return View(user);
         }
 
@@ -128,6 +136,13 @@ namespace AdminMVC.Controllers
             if (user == null)
             {
                 return NotFound();
+            }
+
+            // Si el usuario es "Administrator", redirige a una página de acceso restringido
+            if (user.UserRole == "Administrator")
+            {
+                TempData["Message"] = "No puedes eliminar un usuario administrador.";
+                return RedirectToAction("Restricted", "Access");
             }
 
             return View(user);
